@@ -32,7 +32,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>fanyi</string>
+				<string>fy</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -50,9 +50,9 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>try youself</string>
+				<string>test subtitle</string>
 				<key>title</key>
-				<string>fanyi whant you want</string>
+				<string>test title</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>

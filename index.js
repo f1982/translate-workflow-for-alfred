@@ -1,10 +1,7 @@
 import alfy from 'alfy';
-import alfredNotifier from 'alfred-notifier';
 
-alfredNotifier();
-
-const url = 'https://jsonplaceholder.typicode.com/posts';
 async function init() {
+  const url = 'https://jsonplaceholder.typicode.com/posts';
   const data = await alfy.fetch(url);
 
   const items = alfy.inputMatches(data, 'title')
@@ -14,6 +11,13 @@ async function init() {
       arg: item.arg,
     }));
   alfy.output(items);
+}
+
+function demo() {
+  alfy.output([{
+    title: 'Unicorn',
+    subtitle: alfy.input
+  }]);
 }
 
 init();

@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava",
+    "test": "ava",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
@@ -27,5 +27,8 @@
   },
   "xo": {
     "space": true
+  },
+  "volt": {
+    "node":"14"
   }
 }
