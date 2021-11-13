@@ -18,10 +18,10 @@ test('foo', t => {
   }]);
 });
 
-// test('main', async t => {
-//   console.log('main test start...');
-//   const alfy = alfyTest();
-//   const result = await alfy('opt');
-//   console.log('result', result);
-//   t.true(Array.isArray(result));
-// });
+test('main', async t => {
+  console.log('main test start...');
+  const alfy = alfyTest();
+  const result = await alfy('opt');
+  console.log('result', result);
+  t.true(Array.isArray(result));
+});
