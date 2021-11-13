@@ -1,0 +1,31 @@
+{
+  "name": "fanyi-workflow",
+  "version": "1.0.0",
+  "description": "An other Alfred workflow for translation",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "keywords": [
+    "afred",
+    "workflow",
+    "translate"
+  ],
+  "author": "andy.cao",
+  "license": "ISC",
+  "dependencies": {
+    "alfred-notifier": "^0.2.3",
+    "alfy": "^0.12.1"
+  },
+  "devDependencies": {
+    "alfy-test": "^0.4.2",
+    "ava": "^3.15.0",
+    "xo": "^0.46.4"
+  },
+  "xo": {
+    "space": true
+  }
+}
