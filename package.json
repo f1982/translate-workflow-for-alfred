@@ -17,8 +17,10 @@
   "author": "andy.cao",
   "license": "ISC",
   "dependencies": {
+    "@liqiqiang/youdao-translate": "^1.0.0",
     "alfred-notifier": "^0.2.3",
-    "alfy": "^0.12.1"
+    "alfy": "^0.12.1",
+    "query-string": "^7.0.1"
   },
   "devDependencies": {
     "alfy-test": "^0.4.2",
