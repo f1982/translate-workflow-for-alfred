@@ -1,6 +1,10 @@
 
 This project is using [alfy](https://github.com/sindresorhus/alfy) to build a translate workflow for Alfred 
 
+### Repo
+
+https://github.com/f1982/translate-workflow-for-alfred
+
 ### How to test
 
 `node index.js test`

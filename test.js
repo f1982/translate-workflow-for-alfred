@@ -1,27 +1,10 @@
 import test from 'ava';
 import alfyTest from 'alfy-test';
 
-test.beforeEach(t => {
-  t.context.alfy = alfyTest();
-});
-
-test('foo', t => {
-  console.log('foo test start...');
-  const result = [{
-    title: 'foo',
-    subtitle: 'bar',
-  }];
-  console.log('result', result);
-  t.deepEqual(result, [{
-    title: 'foo',
-    subtitle: 'bar',
-  }]);
-});
-
-test('main', async t => {
-  console.log('main test start...');
+test('main', async (t) => {
   const alfy = alfyTest();
-  const result = await alfy('opt');
-  console.log('result', result);
+  // it's the same as input fy tomorrow in Alfred
+  const result = await alfy('tomorrow');
   t.true(Array.isArray(result));
+  t.true(result.length === 4, 'should get 4 result');
 });
