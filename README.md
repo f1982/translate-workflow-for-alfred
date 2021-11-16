@@ -1,17 +1,18 @@
+### What's this?
 
 This project is using [alfy](https://github.com/sindresorhus/alfy) to build a translate workflow for Alfred 
 
-### Repo
+### How to start dev
 
-https://github.com/f1982/translate-workflow-for-alfred
+`npm run start:dev word_you_want_to_translate`
 
 ### How to test
 
 `node index.js test`
 
 ### Youdao API return data format
-```
 
+```
 {
     returnPhrase: ['test'],
     query: 'test',

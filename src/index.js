@@ -1,6 +1,12 @@
 import Translate from '@liqiqiang/youdao-translate';
 import alfy from 'alfy';
 
+// this means it running outside of the alfred
+function devLog(...rest) {
+  if (!process.env.alfred_version) {
+    console.log('dev log: ', rest);
+  }
+}
 async function start() {
   const translate = new Translate('525100d8f9304067', 'MsLWIHzModLvvgJyeXVFa5WoqgASoOR4');
 
@@ -15,11 +21,7 @@ async function start() {
   // auto en to zh
   const res = await translate.t(alfy.input);
 
-  // this means it running outside of the alfred
-  if (!process.env.alfred_version) {
-    console.log(process.env);
-    console.log('res', res);
-  }
+  devLog('res', res);
 
   // auto zh to en
   // res = await translate.t('你好，世界');
@@ -39,7 +41,7 @@ async function start() {
   //          ->text('copy', 'Bob is the best!')   按cmd+c 复制出来的文本: OBJECT (optional)
   //          ->autocomplete('Bob Belcher');    自动补全 : STRING (recommended)
 
-  if (!res || !res.basic) {
+  if (!res || res.errorCode !== '0' || !res.basic) {
     alfy.output([{
       title: `Cannot find any result for ${alfy.input}`,
       subtitle: 'Sorry please try other words',
@@ -72,6 +74,18 @@ async function start() {
       subtitle: '英音',
       text: res.basic['us-phonetic'],
     });
+  }
+
+  // from web
+  if (res.web) {
+    output.push(...res.web.map((item) => {
+      devLog('web item key', item.key);
+      devLog('web item value', item.value);
+      return ({
+        title: item.key,
+        subtitle: item.value.join('; '),
+      });
+    }));
   }
 
   alfy.output(output);

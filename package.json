@@ -6,7 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "ava --watch",
-    "start:dev": "nodemon tomorrow",
+    "start:dev": "nodemon",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
