@@ -1,7 +1,7 @@
 import test from 'ava';
 import alfyTest from 'alfy-test';
 
-test('main', async (t) => {
+test('test translate tomorrow by using this workflow', async (t) => {
   const alfy = alfyTest();
   // it's the same as input fy tomorrow in Alfred
   const result = await alfy('tomorrow');

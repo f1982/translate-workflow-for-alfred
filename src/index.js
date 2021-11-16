@@ -3,6 +3,15 @@ import alfy from 'alfy';
 
 async function start() {
   const translate = new Translate('525100d8f9304067', 'MsLWIHzModLvvgJyeXVFa5WoqgASoOR4');
+
+  if (!alfy.input || alfy.input.length < 2) {
+    alfy.output([{
+      title: 'Input the word you want to translate',
+      subtitle: 'At least two words',
+    }]);
+    return;
+  }
+
   // auto en to zh
   const res = await translate.t(alfy.input);
 
@@ -30,42 +39,42 @@ async function start() {
   //          ->text('copy', 'Bob is the best!')   按cmd+c 复制出来的文本: OBJECT (optional)
   //          ->autocomplete('Bob Belcher');    自动补全 : STRING (recommended)
 
-  if (res) {
-    const output = [];
-
-    if (res.basic.explains) {
-      output.push(...res.basic.explains.map(
-        (item) => ({
-          title: item,
-          subtitle: alfy.input,
-          text: alfy.input,
-        }),
-      ));
-    }
-
-    if (res.basic['us-phonetic']) {
-      output.push({
-        title: `[US :${res.basic['us-phonetic']}]`,
-        subtitle: '美音',
-        text: res.basic['us-phonetic'],
-
-      });
-    }
-    if (res.basic['uk-phonetic']) {
-      output.push({
-        title: `[UK : ${res.basic['uk-phonetic']}]`,
-        subtitle: '英音',
-        text: res.basic['us-phonetic'],
-      });
-    }
-
-    alfy.output(output);
-  } else {
+  if (!res || !res.basic) {
     alfy.output([{
-      title: 'Cannot find any result',
-      subtitle: alfy.input,
+      title: `Cannot find any result for ${alfy.input}`,
+      subtitle: 'Sorry please try other words',
     }]);
+    return;
   }
+  const output = [];
+
+  if (res.basic.explains) {
+    output.push(...res.basic.explains.map(
+      (item) => ({
+        title: item,
+        subtitle: alfy.input,
+        text: alfy.input,
+      }),
+    ));
+  }
+
+  if (res.basic['us-phonetic']) {
+    output.push({
+      title: `[US :${res.basic['us-phonetic']}]`,
+      subtitle: '美音',
+      text: res.basic['us-phonetic'],
+
+    });
+  }
+  if (res.basic['uk-phonetic']) {
+    output.push({
+      title: `[UK : ${res.basic['uk-phonetic']}]`,
+      subtitle: '英音',
+      text: res.basic['us-phonetic'],
+    });
+  }
+
+  alfy.output(output);
 }
 
 start();
