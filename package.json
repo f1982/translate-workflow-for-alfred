@@ -22,7 +22,8 @@
     "alfred-notifier": "^0.2.3",
     "alfy": "^0.12.1",
     "alfy-test": "^0.4.2",
-    "ava": "^3.15.0"
+    "ava": "^3.15.0",
+    "franc": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^8.2.0",

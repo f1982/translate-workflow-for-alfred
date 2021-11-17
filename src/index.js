@@ -1,5 +1,6 @@
 import Translate from '@liqiqiang/youdao-translate';
 import alfy from 'alfy';
+// import franc from 'franc';
 
 // this means it running outside of the alfred
 function devLog(...rest) {
@@ -18,7 +19,7 @@ async function start() {
     return;
   }
 
-  // auto en to zh
+  // auto en to zh or zh to en
   const res = await translate.t(alfy.input);
 
   devLog('res', res);
@@ -41,7 +42,7 @@ async function start() {
   //          ->text('copy', 'Bob is the best!')   按cmd+c 复制出来的文本: OBJECT (optional)
   //          ->autocomplete('Bob Belcher');    自动补全 : STRING (recommended)
 
-  if (!res || res.errorCode !== '0' || !res.basic) {
+  if (!res || res.errorCode !== '0') {
     alfy.output([{
       title: `Cannot find any result for ${alfy.input}`,
       subtitle: 'Sorry please try other words',
@@ -50,42 +51,56 @@ async function start() {
   }
   const output = [];
 
-  if (res.basic.explains) {
-    output.push(...res.basic.explains.map(
+  if (res.translation) {
+    output.push(...res.translation.map(
       (item) => ({
         title: item,
         subtitle: alfy.input,
+        arg: alfy.input,
         text: alfy.input,
       }),
     ));
   }
 
-  if (res.basic['us-phonetic']) {
+  if (res.basic && res.basic.explains) {
+    output.push(...res.basic.explains.map(
+      (item) => ({
+        title: item,
+        subtitle: alfy.input,
+        arg: alfy.input,
+        text: alfy.input,
+      }),
+    ));
+  }
+
+  if (res.basic && res.basic['us-phonetic']) {
+    const phonetic = res.basic['us-phonetic'];
     output.push({
-      title: `[US :${res.basic['us-phonetic']}]`,
+      title: `[US :${phonetic}]`,
       subtitle: '美音',
-      text: res.basic['us-phonetic'],
+      arg: alfy.input,
+      text: phonetic,
 
     });
   }
-  if (res.basic['uk-phonetic']) {
+  if (res.basic && res.basic['uk-phonetic']) {
+    const phonetic = res.basic['uk-phonetic'];
     output.push({
-      title: `[UK : ${res.basic['uk-phonetic']}]`,
+      title: `[UK : ${phonetic}]`,
       subtitle: '英音',
-      text: res.basic['us-phonetic'],
+      arg: alfy.input,
+      text: phonetic,
     });
   }
 
   // from web
   if (res.web) {
-    output.push(...res.web.map((item) => {
-      devLog('web item key', item.key);
-      devLog('web item value', item.value);
-      return ({
-        title: item.key,
-        subtitle: item.value.join('; '),
-      });
-    }));
+    output.push(...res.web.map((item) => ({
+      title: item.key,
+      subtitle: item.value.join('; '),
+      // if alfy.input is Chinese pounce item.value if input is english, pounce alfy.input
+      arg: item.value.join(' '),
+    })));
   }
 
   alfy.output(output);
