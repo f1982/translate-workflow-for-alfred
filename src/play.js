@@ -1,25 +1,43 @@
 import alfy from 'alfy';
-import * as https from 'https';
-import * as fs from 'fs';
 import { exec } from 'child_process';
+import fs from 'fs';
+import https from 'https';
+import { log } from './utils.js'
 
-function playSound(path) {
-  exec(`afplay ${path}`, () => { console.log('play over'); });
+//download audio file here
+const TMP_FOLDER = './tmp'
+const VOICE_API = 'https://dict.youdao.com/dictvoice?audio=$WORDS&type=1'
+
+function playSound(path, callback) {
+  exec(`afplay ${path}`, () => {
+    log('play over: ', path);
+    callback && callback(path);
+  });
 }
 
-const keyword = alfy.input;
-const filename = alfy.input.split(' ').join('_');
+function getAudio(words, callback) {
+  const filename = words.split(' ').join('_').toLowerCase();
+  log('filename', filename);
+  const path = `${TMP_FOLDER}/${filename}.mp3`;
 
-const path = `./tmp/${filename}.mp3`;
+  if (fs.existsSync(path)) {
+    callback(path);
+  } else {
+    const file = fs.createWriteStream(path);
+    const url = VOICE_API.replace('$WORDS', words)
+    // TODO: add error handling
+    https.get(url, (response) => {
+      response.pipe(file);
+      callback(path);
+    });
+  }
+}
 
-if (fs.existsSync(path)) {
-  console.log('play local file');
-  playSound(path);
-} else {
-  const file = fs.createWriteStream(path);
-  https.get(`https://dict.youdao.com/dictvoice?audio=${keyword}&type=1`, (response) => {
-    response.pipe(file);
-    console.log('play downloaded file');
-    playSound(path);
-  });
+if (alfy.input && alfy.input.length > 2) {
+  getAudio(alfy.input, (audioFile) => {
+    playSound(audioFile, () => {
+      //remove tmp file?
+    });
+
+  })
 }

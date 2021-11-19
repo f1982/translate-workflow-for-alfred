@@ -1,12 +1,14 @@
 {
-  "name": "fanyi-workflow",
+  "name": "alfred-translator",
   "version": "1.0.0",
   "description": "An other Alfred workflow for translation",
   "type": "module",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "ava --watch",
     "start:dev": "nodemon",
+    "link": "npx alfred-link",
+    "unlink": "npx alfred-unlink",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
@@ -15,7 +17,11 @@
     "workflow",
     "translate"
   ],
-  "author": "andy.cao",
+  "author": {
+    "name": "andy.cao",
+    "email": "001sd@126.com",
+    "url": "https://andycao.me"
+  },
   "license": "ISC",
   "dependencies": {
     "@liqiqiang/youdao-translate": "^1.0.0",

@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</string>
+				<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -18,9 +18,12 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</string>
+				<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -54,6 +57,29 @@
 		</array>
 		<key>703B165D-1B55-43AF-8DC5-72A0EEC64383</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</string>
@@ -122,10 +148,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>createdby</key>
-	<string>andy.cao</string>
-	<key>description</key>
-	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -173,6 +195,37 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>64</integer>
+				<key>hotmod</key>
+				<integer>8388608</integer>
+				<key>hotstring</key>
+				<string>F17</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -211,37 +264,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>1</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>-1</integer>
-				<key>hotmod</key>
-				<integer>262144</integer>
-				<key>hotstring</key>
-				<string>double tap</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>1631A077-1B5D-40B9-BA54-A7160FFB09A2</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -267,7 +289,11 @@ end alfred_script</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node ./src/index.js "$1"</string>
+				<string>echo "${var:projectPath}"
+
+./node_modules/.bin/run-node ./src/index.js "$1"
+
+</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -308,10 +334,49 @@ end alfred_script</string>
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>-1</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>double tap</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1631A077-1B5D-40B9-BA54-A7160FFB09A2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
 			<string>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -491,7 +556,7 @@ echo -n $word | say $1 -v $actor
 			<key>xpos</key>
 			<integer>35</integer>
 			<key>ypos</key>
-			<integer>510</integer>
+			<integer>585</integer>
 		</dict>
 		<key>3F17D477-B861-46A7-BEAA-0D279D0D9BC3</key>
 		<dict>
@@ -501,6 +566,16 @@ echo -n $word | say $1 -v $actor
 			<integer>770</integer>
 			<key>ypos</key>
 			<integer>580</integer>
+		</dict>
+		<key>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</key>
+		<dict>
+			<key>note</key>
+			<string>Double click control key to search selected word use Youdao translation API
+双击 control 按键查询选中的单词（可在任何软件和系统下使用）</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>360</integer>
 		</dict>
 		<key>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</key>
 		<dict>
@@ -527,6 +602,13 @@ echo -n $word | say $1 -v $actor
 			<integer>770</integer>
 			<key>ypos</key>
 			<integer>725</integer>
+		</dict>
+		<key>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>195</integer>
+			<key>ypos</key>
+			<integer>625</integer>
 		</dict>
 		<key>95CBF499-0A8F-40E6-B3B6-F848794D6158</key>
 		<dict>
@@ -576,7 +658,7 @@ echo -n $word | say $1 -v $actor
 			<integer>690</integer>
 		</dict>
 	</dict>
-	<key>webaddress</key>
-	<string>https://andycao.me/pr/alfred-workflow-fanyi</string>
+	<key>variablesdontexport</key>
+	<array/>
 </dict>
 </plist>
