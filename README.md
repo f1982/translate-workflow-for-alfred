@@ -72,4 +72,4 @@ This project is using [alfy](https://github.com/sindresorhus/alfy) to build a tr
 - https://github.com/SamVerschueren/alfy-test
 - https://github.com/SamVerschueren/alfred-ng
 
-## test new rule 22
+## test new rule 33
