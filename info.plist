@@ -289,7 +289,7 @@ end alfred_script</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node -r dotenv/config ./src/index.js "$1"
+				<string>./node_modules/.bin/run-node -r dotenv/config ./src/translate.js "$1"
 
 </string>
 				<key>scriptargtype</key>
@@ -468,7 +468,7 @@ echo -n $word | say $1 -v $actor
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node ./src/play.js "$1"</string>
+				<string>./node_modules/.bin/run-node ./src/pronounce.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
