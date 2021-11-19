@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "ava --watch",
-    "start:dev": "nodemon",
+    "dev:translate": "nodemon -r dotenv/config ./src/index.js",
+    "dev:pronounce": "nodemon -r dotenv/config ./src/play.js",
     "link": "npx alfred-link",
     "unlink": "npx alfred-unlink",
     "postinstall": "alfy-init",
@@ -28,10 +29,10 @@
     "alfred-notifier": "^0.2.3",
     "alfy": "^0.12.1",
     "alfy-test": "^0.4.2",
-    "ava": "^3.15.0",
-    "franc": "^6.0.0"
+    "ava": "^3.15.0"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",

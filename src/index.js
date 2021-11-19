@@ -5,8 +5,14 @@ import { APP_KEY, APP_SECRET, DEBUG_MODE } from './settings.js'
 
 const EN_TO_ZHCHS = 'en2zh-CHS'
 
+log('YOUDAO_APP_KEY: ', process.env.YOUDAO_APP_KEY);
+log('YOUDAO_APP_SECRET: ', process.env.YOUDAO_APP_SECRET);
+
 async function search() {
-  const translate = new Translate(APP_KEY, APP_SECRET);
+  const translate = new Translate(
+    process.env.YOUDAO_APP_KEY,
+    process.env.YOUDAO_APP_SECRET
+  );
 
   // auto en to zh or zh to en
   const res = await translate.t(alfy.input);
@@ -89,5 +95,3 @@ if (!alfy.input || alfy.input.length < 2) {
 } else {
   search(alfy.input);
 }
-
-

@@ -289,9 +289,7 @@ end alfred_script</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>echo "${var:projectPath}"
-
-./node_modules/.bin/run-node ./src/index.js "$1"
+				<string>./node_modules/.bin/run-node -r dotenv/config ./src/index.js "$1"
 
 </string>
 				<key>scriptargtype</key>
