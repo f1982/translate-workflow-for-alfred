@@ -148,8 +148,12 @@
 			</dict>
 		</array>
 	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Fanyi</string>
 	<key>objects</key>
@@ -648,5 +652,9 @@ echo -n $word | say $1 -v $actor
 	</dict>
 	<key>variablesdontexport</key>
 	<array/>
+	<key>version</key>
+	<string>1.0.5</string>
+	<key>webaddress</key>
+	<string></string>
 </dict>
 </plist>

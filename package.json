@@ -10,7 +10,7 @@
     "dev:pronounce": "nodemon -r dotenv/config ./src/pronounce.js",
     "link": "npx alfred-link",
     "unlink": "npx alfred-unlink",
-    "postinstall": "alfred-config",
+    "postinstall": "alfred-init",
     "preuninstall": "alfy-cleanup"
   },
   "keywords": [
