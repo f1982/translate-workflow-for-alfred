@@ -1,6 +1,6 @@
 {
   "name": "alfred-translator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An other Alfred workflow for translation",
   "type": "module",
   "main": "index.js",
