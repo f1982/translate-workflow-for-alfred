@@ -1,6 +1,6 @@
 {
   "name": "ac-translate-alfred-workflow",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An other Alfred workflow for translation",
   "type": "module",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "dev:pronounce": "nodemon -r dotenv/config ./src/pronounce.js",
     "link": "npx alfred-link",
     "unlink": "npx alfred-unlink",
-    "postinstall": "alfred-init",
+    "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
   "keywords": [
