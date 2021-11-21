@@ -1,6 +1,6 @@
 {
   "name": "ac-translate-alfred-workflow",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An other Alfred workflow for translation",
   "type": "module",
   "main": "index.js",
