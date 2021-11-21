@@ -1,6 +1,6 @@
 {
-  "name": "alfred-translator",
-  "version": "1.0.0",
+  "name": "ac-translate-alfred-workflow",
+  "version": "1.0.3",
   "description": "An other Alfred workflow for translation",
   "type": "module",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "dev:pronounce": "nodemon -r dotenv/config ./src/pronounce.js",
     "link": "npx alfred-link",
     "unlink": "npx alfred-unlink",
-    "postinstall": "alfy-init",
+    "postinstall": "alfred-config",
     "preuninstall": "alfy-cleanup"
   },
   "keywords": [
@@ -22,6 +22,22 @@
     "name": "andy.cao",
     "email": "001sd@126.com",
     "url": "https://andycao.me"
+  },
+  "alfy": {
+    "configure": {
+      "api_key": {
+        "type": "input",
+        "message": "GitHub API key?"
+      },
+      "foo": {
+        "type": "list",
+        "message": "Some list here?",
+        "choices": [
+          "foo",
+          "bar"
+        ]
+      }
+    }
   },
   "license": "ISC",
   "dependencies": {

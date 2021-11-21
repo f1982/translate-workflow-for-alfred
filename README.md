@@ -71,5 +71,4 @@ This project is using [alfy](https://github.com/sindresorhus/alfy) to build a tr
 # References
 - https://github.com/SamVerschueren/alfy-test
 - https://github.com/SamVerschueren/alfred-ng
-
-## test new rule 33
+- https://github.com/franciscop/translate

@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
+				<string>538BC847-ECC4-4529-A51E-750C9C05E056</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -20,6 +20,19 @@
 			</dict>
 		</array>
 		<key>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>538BC847-ECC4-4529-A51E-750C9C05E056</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -47,19 +60,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>3F17D477-B861-46A7-BEAA-0D279D0D9BC3</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>703B165D-1B55-43AF-8DC5-72A0EEC64383</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -332,6 +332,14 @@ end alfred_script</string>
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>action</key>
@@ -361,14 +369,6 @@ end alfred_script</string>
 			<string>1631A077-1B5D-40B9-BA54-A7160FFB09A2</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -432,33 +432,26 @@ echo -n $word | say $1 -v $actor
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
 				<key>argument</key>
-				<integer>1</integer>
-				<key>focusedappvariable</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>35</integer>
-				<key>hotmod</key>
-				<integer>786432</integer>
-				<key>hotstring</key>
-				<string>P</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
+				<key>variables</key>
+				<dict>
+					<key>projectPath</key>
+					<string>/Users/andycao/Workspace/Vodafone/DX/dx-ss-mobile</string>
+					<key>test1</key>
+					<string>var1</string>
+					<key>test2</key>
+					<string>var2</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>703B165D-1B55-43AF-8DC5-72A0EEC64383</string>
+			<string>538BC847-ECC4-4529-A51E-750C9C05E056</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -528,12 +521,12 @@ echo -n $word | say $1 -v $actor
 			<key>xpos</key>
 			<integer>580</integer>
 			<key>ypos</key>
-			<integer>835</integer>
+			<integer>960</integer>
 		</dict>
 		<key>096F0353-75AA-4395-A004-13A1A62EB312</key>
 		<dict>
 			<key>xpos</key>
-			<integer>575</integer>
+			<integer>580</integer>
 			<key>ypos</key>
 			<integer>465</integer>
 		</dict>
@@ -552,9 +545,9 @@ echo -n $word | say $1 -v $actor
 			<string>Double click control key to search selected word use Youdao translation API
 双击 control 按键查询选中的单词（可在任何软件和系统下使用）</string>
 			<key>xpos</key>
-			<integer>35</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>605</integer>
 		</dict>
 		<key>3F17D477-B861-46A7-BEAA-0D279D0D9BC3</key>
 		<dict>
@@ -575,22 +568,19 @@ echo -n $word | say $1 -v $actor
 			<key>ypos</key>
 			<integer>360</integer>
 		</dict>
+		<key>538BC847-ECC4-4529-A51E-750C9C05E056</key>
+		<dict>
+			<key>xpos</key>
+			<integer>175</integer>
+			<key>ypos</key>
+			<integer>735</integer>
+		</dict>
 		<key>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</key>
 		<dict>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
 			<integer>600</integer>
-		</dict>
-		<key>703B165D-1B55-43AF-8DC5-72A0EEC64383</key>
-		<dict>
-			<key>note</key>
-			<string>tap the shortcut to read selected word in Google Chrome 
-调用系统语音库，读选中的单词</string>
-			<key>xpos</key>
-			<integer>35</integer>
-			<key>ypos</key>
-			<integer>755</integer>
 		</dict>
 		<key>7C7D10C0-37F5-4E35-8131-5549383F797B</key>
 		<dict>
@@ -621,9 +611,9 @@ echo -n $word | say $1 -v $actor
 		<key>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>325</integer>
+			<integer>300</integer>
 			<key>ypos</key>
-			<integer>570</integer>
+			<integer>485</integer>
 		</dict>
 		<key>ACAAFBF5-AAEF-4862-9FC6-0782CE3D90F4</key>
 		<dict>

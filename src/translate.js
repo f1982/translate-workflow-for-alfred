@@ -8,20 +8,20 @@ const EN_TO_ZHCHS = 'en2zh-CHS'
 log('YOUDAO_APP_KEY: ', process.env.YOUDAO_APP_KEY);
 log('YOUDAO_APP_SECRET: ', process.env.YOUDAO_APP_SECRET);
 
-async function search() {
+async function search(words) {
   const translate = new Translate(
     process.env.YOUDAO_APP_KEY,
     process.env.YOUDAO_APP_SECRET
   );
 
   // auto en to zh or zh to en
-  const res = await translate.t(alfy.input);
+  const res = await translate.t(words);
 
   log('res', res);
 
   if (!res || res.errorCode !== '0') {
     alfy.output([{
-      title: `Cannot find any result for ${alfy.input}`,
+      title: `Cannot find any result for ${words}`,
       subtitle: 'Sorry please try other words',
     }]);
     return;
@@ -36,9 +36,9 @@ async function search() {
     output.push(...res.translation.map(
       (item) => ({
         title: DEBUG_MODE ? 'translation:' + item : item,
-        subtitle: alfy.input,
-        arg: lt === EN_TO_ZHCHS ? alfy.input : item,
-        text: alfy.input,
+        subtitle: words,
+        arg: lt === EN_TO_ZHCHS ? words : item,
+        text: words,
       }),
     ));
   }
@@ -47,9 +47,9 @@ async function search() {
     output.push(...res.basic.explains.map(
       (item) => ({
         title: DEBUG_MODE ? 'explain: ' + item : item,
-        subtitle: alfy.input,
-        arg: lt === EN_TO_ZHCHS ? alfy.input : item,
-        text: alfy.input,
+        subtitle: words,
+        arg: lt === EN_TO_ZHCHS ? words : item,
+        text: words,
       }),
     ));
   }
@@ -59,7 +59,7 @@ async function search() {
     output.push({
       title: `[US :${phonetic}]`,
       subtitle: '美音',
-      arg: alfy.input,
+      arg: words,
       text: phonetic,
 
     });
@@ -69,7 +69,7 @@ async function search() {
     output.push({
       title: `[UK : ${phonetic}]`,
       subtitle: '英音',
-      arg: alfy.input,
+      arg: words,
       text: phonetic,
     });
   }
@@ -93,5 +93,8 @@ if (!alfy.input || alfy.input.length < 2) {
     subtitle: 'At least two words',
   }]);
 } else {
+  console.log('config: ', alfy.config);
+  console.log('config: ', alfy.userConfig);
+  console.log('api_key: ', alfy.userConfig.get('api_key'));
   search(alfy.input);
 }
