@@ -8,19 +8,6 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>08FFE477-8707-42DA-BFAE-76DEFAAF2A75</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>1631A077-1B5D-40B9-BA54-A7160FFB09A2</key>
 		<array>
 			<dict>
@@ -149,32 +136,6 @@
 				<true/>
 			</dict>
 		</array>
-		<key>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>28FF9451-B2DB-49D9-A1A5-D6BACB253FC4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>andy cao</string>
@@ -186,107 +147,6 @@
 	<string>Fanyi</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>fyy</string>
-				<key>subtext</key>
-				<string>Example of setting a keyword using workflow variables</string>
-				<key>text</key>
-				<string>Keyword from Variable</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>08FFE477-8707-42DA-BFAE-76DEFAAF2A75</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string># echo $typedquery
-# echo "hello"
-# ./node_modules/.bin/run-node -r dotenv/config ./src/example.js "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}
-t1= {var:t1}
-api_key = {var:api_key}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>28FF9451-B2DB-49D9-A1A5-D6BACB253FC4</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>anothervariable</key>
-					<string>Another Variable!</string>
-					<key>t1</key>
-					<string>this is var t1</string>
-					<key>typedquery</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -630,18 +490,7 @@ echo -n $word | say $1 -v $actor
 			<key>xpos</key>
 			<integer>580</integer>
 			<key>ypos</key>
-			<integer>960</integer>
-		</dict>
-		<key>08FFE477-8707-42DA-BFAE-76DEFAAF2A75</key>
-		<dict>
-			<key>note</key>
-			<string>1. The keyword for this Keyword Input has been set in the Workflow variables from the [x] button in the top right.
-
-If you haven't changed this, you can run this workflow with the keyword 'testkeyword'.</string>
-			<key>xpos</key>
-			<integer>75</integer>
-			<key>ypos</key>
-			<integer>90</integer>
+			<integer>915</integer>
 		</dict>
 		<key>096F0353-75AA-4395-A004-13A1A62EB312</key>
 		<dict>
@@ -662,19 +511,11 @@ If you haven't changed this, you can run this workflow with the keyword 'testkey
 		<key>1631A077-1B5D-40B9-BA54-A7160FFB09A2</key>
 		<dict>
 			<key>note</key>
-			<string>Double click control key to search selected word use Youdao translation API
-双击 control 按键查询选中的单词（可在任何软件和系统下使用）</string>
+			<string>1st shortcut key</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>605</integer>
-		</dict>
-		<key>28FF9451-B2DB-49D9-A1A5-D6BACB253FC4</key>
-		<dict>
-			<key>xpos</key>
-			<integer>510</integer>
-			<key>ypos</key>
-			<integer>105</integer>
 		</dict>
 		<key>3F17D477-B861-46A7-BEAA-0D279D0D9BC3</key>
 		<dict>
@@ -688,12 +529,11 @@ If you haven't changed this, you can run this workflow with the keyword 'testkey
 		<key>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</key>
 		<dict>
 			<key>note</key>
-			<string>Double click control key to search selected word use Youdao translation API
-双击 control 按键查询选中的单词（可在任何软件和系统下使用）</string>
+			<string>2nd shortcut key</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>485</integer>
+			<integer>475</integer>
 		</dict>
 		<key>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</key>
 		<dict>
@@ -726,7 +566,7 @@ If you haven't changed this, you can run this workflow with the keyword 'testkey
 			<key>xpos</key>
 			<integer>35</integer>
 			<key>ypos</key>
-			<integer>960</integer>
+			<integer>915</integer>
 		</dict>
 		<key>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</key>
 		<dict>
@@ -754,17 +594,6 @@ If you haven't changed this, you can run this workflow with the keyword 'testkey
 			<key>ypos</key>
 			<integer>155</integer>
 		</dict>
-		<key>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</key>
-		<dict>
-			<key>note</key>
-			<string>2. You can also set variables within the workflow stream using the Arg and Vars object.
-
-In this example, the {query} output from the keyword is moved to a variable.</string>
-			<key>xpos</key>
-			<integer>260</integer>
-			<key>ypos</key>
-			<integer>130</integer>
-		</dict>
 		<key>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</key>
 		<dict>
 			<key>colorindex</key>
@@ -775,17 +604,6 @@ In this example, the {query} output from the keyword is moved to a variable.</st
 			<integer>580</integer>
 			<key>ypos</key>
 			<integer>690</integer>
-		</dict>
-		<key>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>在线发音</string>
-			<key>xpos</key>
-			<integer>360</integer>
-			<key>ypos</key>
-			<integer>105</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
