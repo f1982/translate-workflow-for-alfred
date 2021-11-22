@@ -1,6 +1,6 @@
 {
   "name": "ac-translate-alfred-workflow",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "An other Alfred workflow for translation",
   "type": "module",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "test": "ava --watch",
     "dev:translate": "nodemon -r dotenv/config ./src/translate.js",
     "dev:pronounce": "nodemon -r dotenv/config ./src/pronounce.js",
+    "start": "npm run dev:translate 'hello world'",
     "link": "npx alfred-link",
     "unlink": "npx alfred-unlink",
     "postinstall": "alfy-init",
@@ -22,22 +23,6 @@
     "name": "andy.cao",
     "email": "001sd@126.com",
     "url": "https://andycao.me"
-  },
-  "alfy": {
-    "configure": {
-      "api_key": {
-        "type": "input",
-        "message": "GitHub API key?"
-      },
-      "foo": {
-        "type": "list",
-        "message": "Some list here?",
-        "choices": [
-          "foo",
-          "bar"
-        ]
-      }
-    }
   },
   "license": "ISC",
   "dependencies": {
