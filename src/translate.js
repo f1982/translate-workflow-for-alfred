@@ -1,17 +1,14 @@
 import Translate from '@liqiqiang/youdao-translate';
 import alfy from 'alfy';
 import { log } from './utils.js'
-import { APP_KEY, APP_SECRET, DEBUG_MODE } from './settings.js'
+import { DEBUG_MODE } from './settings.js'
 
 const EN_TO_ZHCHS = 'en2zh-CHS'
 
-log('YOUDAO_APP_KEY: ', process.env.YOUDAO_APP_KEY);
-log('YOUDAO_APP_SECRET: ', process.env.YOUDAO_APP_SECRET);
-
 async function search(words) {
   const translate = new Translate(
-    process.env.YOUDAO_APP_KEY,
-    process.env.YOUDAO_APP_SECRET
+    process.env.YOUDAO_API_KEY,
+    process.env.YOUDAO_API_SECRET
   );
 
   // auto en to zh or zh to en
@@ -28,7 +25,7 @@ async function search(words) {
   }
 
   const lt = res.l; //zh-CHS2en, en2zh-CHS
-  log('lt: ', lt);
+  log('language translate mark: ', lt);
 
   const output = [];
 
@@ -87,14 +84,23 @@ async function search(words) {
   alfy.output(output);
 }
 
+if (!process.env.YOUDAO_API_KEY || !process.env.YOUDAO_API_SECRET) {
+  alfy.output([{
+    title: 'Error',
+    subtitle: 'please update your settings for the workflow',
+  }]);
+}
+
+log('YOUDAO_APP_KEY: ', process.env.YOUDAO_API_KEY);
+log('YOUDAO_APP_SECRET: ', process.env.YOUDAO_API_SECRET);
+
 if (!alfy.input || alfy.input.length < 2) {
   alfy.output([{
     title: 'Input the word you want to translate',
-    subtitle: 'At least two words',
+    subtitle: 'At least two characters',
   }]);
-} else {
-  console.log('config: ', alfy.config);
-  console.log('config: ', alfy.userConfig);
-  console.log('api_key: ', alfy.userConfig.get('api_key'));
-  search(alfy.input);
 }
+
+log('searching: ', alfy.input);
+
+search(alfy.input);

@@ -4,11 +4,14 @@ This project is using [alfy](https://github.com/sindresorhus/alfy) to build a tr
 
 ### How to start dev
 
-`npm run start:dev word_you_want_to_translate`
+`npm start`
 
 ### How to test
 
 `node index.js test`
+
+### Publish to npm
+
 
 ### Youdao API return data format
 
