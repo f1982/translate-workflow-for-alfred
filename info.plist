@@ -4,13 +4,15 @@
 <dict>
 	<key>bundleid</key>
 	<string>me.andycao.workflow.fanyi</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>1631A077-1B5D-40B9-BA54-A7160FFB09A2</key>
+		<key>08FFE477-8707-42DA-BFAE-76DEFAAF2A75</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>538BC847-ECC4-4529-A51E-750C9C05E056</string>
+				<string>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -19,7 +21,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</key>
+		<key>1631A077-1B5D-40B9-BA54-A7160FFB09A2</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -32,7 +34,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>538BC847-ECC4-4529-A51E-750C9C05E056</key>
+		<key>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -147,17 +149,144 @@
 				<true/>
 			</dict>
 		</array>
+		<key>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>28FF9451-B2DB-49D9-A1A5-D6BACB253FC4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>andy cao</string>
 	<key>description</key>
-	<string></string>
+	<string>a translate workflow</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Fanyi</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>fyy</string>
+				<key>subtext</key>
+				<string>Example of setting a keyword using workflow variables</string>
+				<key>text</key>
+				<string>Keyword from Variable</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>08FFE477-8707-42DA-BFAE-76DEFAAF2A75</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># echo $typedquery
+# echo "hello"
+# ./node_modules/.bin/run-node -r dotenv/config ./src/example.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}
+t1= {var:t1}
+api_key = {var:api_key}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>28FF9451-B2DB-49D9-A1A5-D6BACB253FC4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>anothervariable</key>
+					<string>Another Variable!</string>
+					<key>t1</key>
+					<string>this is var t1</string>
+					<key>typedquery</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -199,37 +328,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>1</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>64</integer>
-				<key>hotmod</key>
-				<integer>8388608</integer>
-				<key>hotstring</key>
-				<string>F17</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -264,6 +362,37 @@ end alfred_script</string>
 			<string>096F0353-75AA-4395-A004-13A1A62EB312</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>64</integer>
+				<key>hotmod</key>
+				<integer>8388608</integer>
+				<key>hotstring</key>
+				<string>F17</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>48DDEC75-02CF-47CB-BC6B-9EB9DF2B763E</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -315,6 +444,14 @@ end alfred_script</string>
 			<string>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -375,14 +512,6 @@ end alfred_script</string>
 			<integer>2</integer>
 		</dict>
 		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
 			<key>config</key>
 			<dict>
 				<key>concurrently</key>
@@ -430,30 +559,6 @@ echo -n $word | say $1 -v $actor
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>7C7D10C0-37F5-4E35-8131-5549383F797B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>projectPath</key>
-					<string>/Users/andycao/Workspace/Vodafone/DX/dx-ss-mobile</string>
-					<key>test1</key>
-					<string>var1</string>
-					<key>test2</key>
-					<string>var2</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>538BC847-ECC4-4529-A51E-750C9C05E056</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -513,7 +618,7 @@ echo -n $word | say $1 -v $actor
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>runable workflow</string>
 	<key>uidata</key>
 	<dict>
 		<key>002BB093-8EC6-4F4E-88BE-DE83BA2E0804</key>
@@ -526,6 +631,17 @@ echo -n $word | say $1 -v $actor
 			<integer>580</integer>
 			<key>ypos</key>
 			<integer>960</integer>
+		</dict>
+		<key>08FFE477-8707-42DA-BFAE-76DEFAAF2A75</key>
+		<dict>
+			<key>note</key>
+			<string>1. The keyword for this Keyword Input has been set in the Workflow variables from the [x] button in the top right.
+
+If you haven't changed this, you can run this workflow with the keyword 'testkeyword'.</string>
+			<key>xpos</key>
+			<integer>75</integer>
+			<key>ypos</key>
+			<integer>90</integer>
 		</dict>
 		<key>096F0353-75AA-4395-A004-13A1A62EB312</key>
 		<dict>
@@ -553,6 +669,13 @@ echo -n $word | say $1 -v $actor
 			<key>ypos</key>
 			<integer>605</integer>
 		</dict>
+		<key>28FF9451-B2DB-49D9-A1A5-D6BACB253FC4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>510</integer>
+			<key>ypos</key>
+			<integer>105</integer>
+		</dict>
 		<key>3F17D477-B861-46A7-BEAA-0D279D0D9BC3</key>
 		<dict>
 			<key>note</key>
@@ -568,16 +691,9 @@ echo -n $word | say $1 -v $actor
 			<string>Double click control key to search selected word use Youdao translation API
 双击 control 按键查询选中的单词（可在任何软件和系统下使用）</string>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>360</integer>
-		</dict>
-		<key>538BC847-ECC4-4529-A51E-750C9C05E056</key>
-		<dict>
-			<key>xpos</key>
-			<integer>175</integer>
-			<key>ypos</key>
-			<integer>735</integer>
+			<integer>485</integer>
 		</dict>
 		<key>5DC5460B-FF65-41F7-9BAD-A7621E29FF6D</key>
 		<dict>
@@ -598,9 +714,9 @@ echo -n $word | say $1 -v $actor
 		<key>8A9B30C1-E4EB-4C8C-BF19-9614286A3BA9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>195</integer>
+			<integer>185</integer>
 			<key>ypos</key>
-			<integer>625</integer>
+			<integer>565</integer>
 		</dict>
 		<key>95CBF499-0A8F-40E6-B3B6-F848794D6158</key>
 		<dict>
@@ -615,9 +731,9 @@ echo -n $word | say $1 -v $actor
 		<key>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>485</integer>
+			<integer>535</integer>
 		</dict>
 		<key>ACAAFBF5-AAEF-4862-9FC6-0782CE3D90F4</key>
 		<dict>
@@ -638,6 +754,17 @@ echo -n $word | say $1 -v $actor
 			<key>ypos</key>
 			<integer>155</integer>
 		</dict>
+		<key>E07AF4AC-5682-4EA5-AB1F-716D6AFAAEF8</key>
+		<dict>
+			<key>note</key>
+			<string>2. You can also set variables within the workflow stream using the Arg and Vars object.
+
+In this example, the {query} output from the keyword is moved to a variable.</string>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
 		<key>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</key>
 		<dict>
 			<key>colorindex</key>
@@ -649,12 +776,28 @@ echo -n $word | say $1 -v $actor
 			<key>ypos</key>
 			<integer>690</integer>
 		</dict>
+		<key>F01A3B0D-8EC1-4916-878B-5038CE2C0DCB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>在线发音</string>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>105</integer>
+		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
+	<key>variables</key>
+	<dict>
+		<key>YOUDAO_API_KEY</key>
+		<string>525100d8f9304067</string>
+		<key>YOUDAO_API_SECRET</key>
+		<string>MsLWIHzModLvvgJyeXVFa5WoqgASoOR4</string>
+	</dict>
 	<key>version</key>
-	<string>1.0.5</string>
+	<string>1.0.10</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>http://andycao.me</string>
 </dict>
 </plist>
