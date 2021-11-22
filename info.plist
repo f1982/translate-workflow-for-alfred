@@ -795,8 +795,13 @@ In this example, the {query} output from the keyword is moved to a variable.</st
 		<key>YOUDAO_API_SECRET</key>
 		<string>MsLWIHzModLvvgJyeXVFa5WoqgASoOR4</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>YOUDAO_API_KEY</string>
+		<string>YOUDAO_API_SECRET</string>
+	</array>
 	<key>version</key>
-	<string>1.0.10</string>
+	<string>1.0.11</string>
 	<key>webaddress</key>
 	<string>http://andycao.me</string>
 </dict>
