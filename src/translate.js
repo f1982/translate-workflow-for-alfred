@@ -3,7 +3,18 @@ import alfy from 'alfy';
 import { log } from './utils.js'
 import { DEBUG_MODE } from './settings.js'
 
-const EN_TO_ZHCHS = 'en2zh-CHS'
+export const EN_TO_ZHCHS = 'en2zh-CHS'
+
+export function parseTranslation(translation, lt, searchWorld) {
+  return translation.map(
+    (item) => ({
+      title: DEBUG_MODE ? 'translation:' + item : item,
+      subtitle: searchWorld,
+      arg: lt === EN_TO_ZHCHS ? searchWorld : item,
+      text: searchWorld,
+    }),
+  )
+}
 
 async function search(words) {
   const translate = new Translate(
