@@ -5,13 +5,14 @@ This project is using [alfy](https://github.com/sindresorhus/alfy) to build a tr
 ## How to use it
 
 Before you start to use this Alfred workflow, you need to have a developer account in [api.youdao.com](https://ai.youdao.com/gw.s#/). And create a application and get API_KEY and API_SECRET
+
 ### How to start dev
 
-`npm start word_you_want_to_translate`
+`npm start`
 
-### How to test
+### How to unit test
 
-`node index.js test`
+`npm test`
 
 ## Repo
 - https://github.com/f1982/translate-workflow-for-alfred
