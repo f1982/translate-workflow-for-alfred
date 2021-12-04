@@ -14,6 +14,22 @@ Before you start to use this Alfred workflow, you need to have a developer accou
 
 `npm test`
 
+### Publish to npm
+
+Update the version number
+
+```
+npm version patch // 1.0.1
+npm version minor // 1.1.0
+npm version major // 2.0.0
+```
+
+Publish new version to npm 
+
+```
+npm publish
+```
+
 ## Repo
 - https://github.com/f1982/translate-workflow-for-alfred
 
