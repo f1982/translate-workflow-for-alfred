@@ -136,6 +136,19 @@
 				<true/>
 			</dict>
 		</array>
+		<key>ED6F6C94-A956-41AC-BCAA-B4243F57F725</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>andy cao</string>
@@ -425,6 +438,37 @@ echo -n $word | say $1 -v $actor
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>35</integer>
+				<key>hotmod</key>
+				<integer>786432</integer>
+				<key>hotstring</key>
+				<string>P</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>ED6F6C94-A956-41AC-BCAA-B4243F57F725</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -478,7 +522,13 @@ echo -n $word | say $1 -v $actor
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>runable workflow</string>
+	<string>This is another translate workflow for Alfred. 
+
+- Before you start to use it, you need first to get a open-api account from https://ai.youdao.com/. After that, you need to create a application and get API_KEY and API_SECRET
+
+- This workflow currently only for personal use and I only share this for some friends.
+
+- I don't guarantee this software works flawlessly</string>
 	<key>uidata</key>
 	<dict>
 		<key>002BB093-8EC6-4F4E-88BE-DE83BA2E0804</key>
@@ -561,12 +611,11 @@ echo -n $word | say $1 -v $actor
 		<key>95CBF499-0A8F-40E6-B3B6-F848794D6158</key>
 		<dict>
 			<key>note</key>
-			<string>tap the shortcut to read selected word in Google Chrome by youdao api
-调用 youdao 在线语音库，读选中的单词</string>
+			<string>Set shortcut to read selected word with online pronouncing service</string>
 			<key>xpos</key>
-			<integer>35</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>915</integer>
+			<integer>950</integer>
 		</dict>
 		<key>99DE03FA-36F7-4FA3-A7F0-34A5BBDF73F5</key>
 		<dict>
@@ -594,6 +643,15 @@ echo -n $word | say $1 -v $actor
 			<key>ypos</key>
 			<integer>155</integer>
 		</dict>
+		<key>ED6F6C94-A956-41AC-BCAA-B4243F57F725</key>
+		<dict>
+			<key>note</key>
+			<string>Set shortcut to read selected word by macOS</string>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>760</integer>
+		</dict>
 		<key>EEA3A7FE-E67D-432A-BAA2-13C8AB6B17A9</key>
 		<dict>
 			<key>colorindex</key>
@@ -608,13 +666,20 @@ echo -n $word | say $1 -v $actor
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>READ_AFTER_SEARCH</key>
+		<string>false</string>
 		<key>YOUDAO_API_KEY</key>
 		<string>525100d8f9304067</string>
 		<key>YOUDAO_API_SECRET</key>
 		<string>MsLWIHzModLvvgJyeXVFa5WoqgASoOR4</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>YOUDAO_API_KEY</string>
+		<string>YOUDAO_API_SECRET</string>
+	</array>
 	<key>version</key>
-	<string>1.0.10</string>
+	<string>1.0.14</string>
 	<key>webaddress</key>
 	<string>http://andycao.me</string>
 </dict>
