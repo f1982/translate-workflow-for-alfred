@@ -8,11 +8,18 @@ import { log } from './utils.js'
 const TMP_FOLDER = './tmp'
 const VOICE_API = 'https://dict.youdao.com/dictvoice?audio=$WORDS&type=1'
 
-function playSound(path, callback) {
+function playAudioFile(path, callback) {
   exec(`afplay ${path}`, () => {
     log('play over: ', path);
     callback && callback(path);
   });
+}
+
+const ACTOR_DANIEL = 'Daniel'
+export function speak(words, actor = ACTOR_DANIEL, callback = null) {
+  exec(`say ${words} -v ${actor}`, () => {
+    callback && callback()
+  })
 }
 
 function getAudio(words, callback) {
@@ -35,7 +42,7 @@ function getAudio(words, callback) {
 
 if (alfy.input && alfy.input.length > 2) {
   getAudio(alfy.input, (audioFile) => {
-    playSound(audioFile, () => {
+    playAudioFile(audioFile, () => {
       //remove tmp file?
     });
 

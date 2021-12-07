@@ -2,6 +2,7 @@ import Translate from '@liqiqiang/youdao-translate';
 import alfy from 'alfy';
 import { log } from './utils.js'
 import { DEBUG_MODE } from './settings.js'
+import { speak } from './pronounce.js'
 
 export const EN_TO_ZHCHS = 'en2zh-CHS'
 
@@ -115,3 +116,6 @@ if (!alfy.input || alfy.input.length < 2) {
 log('searching: ', alfy.input);
 
 search(alfy.input);
+if (process.env.READ_AFTER_SEARCH === 'true') {
+  speak(alfy.input);
+}
